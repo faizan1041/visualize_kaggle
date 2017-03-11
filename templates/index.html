@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="djangular">
+<head>
+  <title>Djangular-django-angular-boilerplate</title>
+
+  <base href="/" />
+
+  {% include 'stylesheets.html' %}
+</head>
+
+<body>
+ <div id="wrapper" class="toggled">
+  <!-- {#% include 'navbar.html' %} -->
+   {% include 'sidebar.html' %} 
+
+  <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-align-justify"></span></a>
+                    <div class="col-xs-12 ng-view"></div>
+                </div>
+            </div>
+        </div>
+
+  </div>
+
+  
+  {% include 'javascripts.html' %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Python compiled byte code
+*.pyc
+
+# SQLite3 database
+*.sqlite3
+
+#Virtual environment
+venv/
+
+# Node modules
+djangular/node_modules/
+
+# Bower components
+djangular/static/bower_components/
+
+#settings.py
+djangular/djangular/settings.py
