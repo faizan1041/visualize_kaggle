@@ -11,7 +11,7 @@ venv/
 djangular/node_modules/
 
 # Bower components
-djangular/static/bower_components/
+#djangular/static/bower_components/
 
 #settings.py
 djangular/djangular/settings.py
