@@ -156,3 +156,6 @@ ALLOWED_HOSTS = ['*']
 
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
