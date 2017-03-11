@@ -1,0 +1,22 @@
+{
+  "name": "djangulardjangoangularboilerplate",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kranthikiran/django-angular-boilerplate",
+  "license": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angular-cookies": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "bootstrap-material-design": "~0.1.5",
+    "jquery": "~2.1.4",
+    "ngDialog": "~0.3.3",
+    "underscore": "~1.7.0",
+    "c3": "^0.4.11"
+  }
+}
