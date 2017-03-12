@@ -21,7 +21,7 @@
     controllerAs:'vm',
     templateUrl:'/static/templates/layout/index.html'
   }).when('/',{
-    controller:'IndexController',
+    controller:'HRAnalyticsController',
     controllerAs:'vm',
     templateUrl:'/static/templates/layout/index.html'
   }).otherwise({

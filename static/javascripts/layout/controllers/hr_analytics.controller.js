@@ -57,9 +57,7 @@
               yvals_arr.unshift(yvals_label);
               
 
-              console.log(xvals_arr);
-
-              console.log(yvals_arr);
+              
 
               
 
