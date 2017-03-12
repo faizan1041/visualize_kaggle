@@ -21,58 +21,80 @@
 
 
 
+
           var df = response.data;
 
           $scope.columns = Object.keys(df);
 
+          // $scope.xvals = '';
 
-          var xvals = 'satisfaction_level';
-          var yvals = 'average_montly_hours';
+          // var xvals = $scope.xvals;
+          //var yvals = 'average_montly_hours';
+          
           
 
-          var xvals_label = labelize(xvals);
-          var yvals_label = labelize(yvals);
+          $scope.plot = function(xvals,yvals) {
 
+              if(!xvals || !yvals) {
+                return false;
+              }
 
-          var xvals_arr = objToArr(df[xvals]);
-          xvals_arr.unshift(xvals_label);
-
-
-          
-          var yvals_arr = objToArr(df[yvals]);
-          yvals_arr.unshift(yvals_label);
-          
-
-
-
-          
-          var chart = c3.generate({
-              size: {
-                    height: 500
-                  },
-              data: {
-                  xs: {
-                      [yvals_label]: xvals_label,
-                  },
-                  columns: [
-                      xvals_arr,
-                      yvals_arr
-                  ],
-                  type: 'scatter',
+            
+              console.log(yvals);
                   
-              },
-              axis: {
-                      x: {
-                          label: xvals_label,
-                          tick: {
-                              fit: false
-                          }
+
+              var xvals_label = labelize(xvals);
+              var yvals_label = labelize(yvals);
+
+
+              var xvals_arr = objToArr(df[xvals]);
+              xvals_arr.unshift(xvals_label);
+
+
+              
+              
+              var yvals_arr = objToArr(df[yvals]);
+              yvals_arr.unshift(yvals_label);
+              
+
+              console.log(xvals_arr);
+
+              console.log(yvals_arr);
+
+              
+
+
+              
+              var chart = c3.generate({
+                  size: {
+                        height: 500
                       },
-                      y: {
-                          label: yvals_label
+                  data: {
+                      xs: {
+                          [yvals_label]: xvals_label,
+                      },
+                      columns: [
+                          xvals_arr,
+                          yvals_arr
+                      ],
+                      type: 'scatter',
+                      
+                  },
+                  axis: {
+                          x: {
+                              label: xvals_label,
+                              tick: {
+                                  fit: false
+                              }
+                          },
+                          y: {
+                              label: yvals_label
+                          }
                       }
-                  }
-              });
+                  });
+         }
+          
+          
 
     
 
@@ -100,6 +122,9 @@
  function labelize(str){
     return str.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
  }
+
+
+ 
 
 
 

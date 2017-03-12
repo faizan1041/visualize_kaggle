@@ -1,6 +1,14 @@
-<select name="repeatSelect" id="repeatSelect" ng-model="data.model">
-      <option ng-repeat="option in columns" value="{{option}}">{{option}}</option>
-    </select>
+<select ng-model="xvals" ng-change="plot(xvals,yvals)">
+  <option ng-repeat="xvals in columns" value="{{xvals}}" >{{xvals}}</option>
+</select>
+
+
+<select ng-model="yvals" ng-change="plot(xvals,yvals)">
+  <option ng-repeat="yvals in columns" value="{{yvals}}" >{{yvals}}</option>
+</select>
+
+
+
 
 
 <div id="chart" class="c3">
