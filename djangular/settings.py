@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import pdb
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,6 +32,7 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
+    'scrape_kaggle.apps.ScrapeKaggleConfig',
     'hr_analytics.apps.HrAnalyticsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
     'rest_framework',
     'compressor',
     'authentication',
@@ -153,6 +156,30 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+
+
+# CRONJOBS = [
+#     ('*/5 * * * *', 'scrape_kaggle.cron.my_scheduled_job')
+# ]
+
+
+
+
+from mongoengine import connect
+CLIENT = connect(db='visualize_kaggle',host='localhost', username='root', password='123456')
+
+DB = CLIENT.visualize_kaggle
+
+
+import threading
+import scrape_kaggle.models as sk
+
+def schedule_scrape():
+    scr = sk.ScrapeKaggle() 
+    threading.Timer(86400, schedule_scrape).start()
+    scr.scrape()
+
+schedule_scrape()
 
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

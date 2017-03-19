@@ -19,3 +19,8 @@ This app is for visualizing datasets published on Kaggle, bootstrapped from http
 * `$ python manage.py migrate`
 * `$ python manage.py runserver`
 # visualize_kaggle
+
+
+Plans..
+
+//Send request for loading a particular column..  instead of whole df

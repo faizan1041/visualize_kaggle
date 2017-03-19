@@ -18,6 +18,7 @@ urlpatterns = patterns(
     '',
     url(r'^api/v1/', include(router.urls)),
     url(r'^api/v1/', include(accounts_router.urls)),
+    url(r'^api/v1/scrape_kaggle', include('scrape_kaggle.urls')),
     url(r'^api/v1/hr_analytics', include('hr_analytics.urls')),
     url(r'^api/v1/auth/login/$', LoginView.as_view(), name='login'),
     url(r'^api/v1/auth/logout/$', LogoutView.as_view(), name='logout'),

@@ -1,12 +1,14 @@
 import os
 import pandas as pd
 from django.http import JsonResponse
-
-df = pd.read_csv(os.getcwd()+'/hr_analytics/HR_comma_sep.csv')
+import pdb
 
 # Create your views here.
+import models
+
 
 
 def index(request):
+	sk = models.ScrapeKaggle()
+	return JsonResponse({'dumped':sk.scrape()})
 	
-    return JsonResponse(df.to_dict())
