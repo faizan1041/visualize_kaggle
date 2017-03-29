@@ -34,6 +34,7 @@ DEBUG = True
 INSTALLED_APPS = [
     'scrape_kaggle.apps.ScrapeKaggleConfig',
     'hr_analytics.apps.HrAnalyticsConfig',
+    'djng',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -179,7 +180,7 @@ def schedule_scrape():
     threading.Timer(86400, schedule_scrape).start()
     scr.scrape()
 
-schedule_scrape()
+#schedule_scrape()
 
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

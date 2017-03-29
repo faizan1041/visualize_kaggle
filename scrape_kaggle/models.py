@@ -61,3 +61,8 @@ class ScrapeKaggle(object):
 
 		# except Exception as e:
 		# 	return False
+
+
+	def get_datasets(self):
+		datasets = db.datasets.find({"isFeatured" : True}).limit(5)
+		return datasets

@@ -20,6 +20,10 @@
     controller:'HRAnalyticsController',
     controllerAs:'vm',
     templateUrl:'/static/templates/layout/index.html'
+  }).when('/scrape_kaggle',{
+    controller:'ScrapeKaggleController',
+    controllerAs:'vm',
+    templateUrl:'/static/templates/scrape_kaggle/index.html'
   }).when('/',{
     controller:'HRAnalyticsController',
     controllerAs:'vm',

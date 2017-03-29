@@ -5,8 +5,7 @@ angular
     'djangular.routes',
     'djangular.authentication',
     'djangular.layout',
-    'djangular.utils',
-    'djangular.posts'
+    'djangular.utils'
   ]);
 
 angular
